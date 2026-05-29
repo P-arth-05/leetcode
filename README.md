@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0036-valid-sudoku](https://github.com/P-arth-05/leetcode/tree/master/0036-valid-sudoku) |
 | [0518-coin-change-ii](https://github.com/P-arth-05/leetcode/tree/master/0518-coin-change-ii) |
 ## Dynamic Programming
 |  |
@@ -39,4 +40,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/P-arth-05/leetcode/tree/master/0020-valid-parentheses) |
+## Hash Table
+|  |
+| ------- |
+| [0036-valid-sudoku](https://github.com/P-arth-05/leetcode/tree/master/0036-valid-sudoku) |
+## Matrix
+|  |
+| ------- |
+| [0036-valid-sudoku](https://github.com/P-arth-05/leetcode/tree/master/0036-valid-sudoku) |
 <!---LeetCode Topics End-->
