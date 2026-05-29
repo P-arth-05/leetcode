@@ -31,4 +31,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/P-arth-05/leetcode/tree/master/1448-count-good-nodes-in-binary-tree) |
+## String
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/P-arth-05/leetcode/tree/master/0020-valid-parentheses) |
+## Stack
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/P-arth-05/leetcode/tree/master/0020-valid-parentheses) |
 <!---LeetCode Topics End-->
