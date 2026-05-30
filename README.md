@@ -12,10 +12,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0036-valid-sudoku](https://github.com/P-arth-05/leetcode/tree/master/0036-valid-sudoku) |
 | [0041-first-missing-positive](https://github.com/P-arth-05/leetcode/tree/master/0041-first-missing-positive) |
+| [0042-trapping-rain-water](https://github.com/P-arth-05/leetcode/tree/master/0042-trapping-rain-water) |
 | [0518-coin-change-ii](https://github.com/P-arth-05/leetcode/tree/master/0518-coin-change-ii) |
 ## Dynamic Programming
 |  |
 | ------- |
+| [0042-trapping-rain-water](https://github.com/P-arth-05/leetcode/tree/master/0042-trapping-rain-water) |
 | [0518-coin-change-ii](https://github.com/P-arth-05/leetcode/tree/master/0518-coin-change-ii) |
 ## Tree
 |  |
@@ -44,6 +46,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/P-arth-05/leetcode/tree/master/0020-valid-parentheses) |
+| [0042-trapping-rain-water](https://github.com/P-arth-05/leetcode/tree/master/0042-trapping-rain-water) |
 ## Hash Table
 |  |
 | ------- |
@@ -53,4 +56,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0036-valid-sudoku](https://github.com/P-arth-05/leetcode/tree/master/0036-valid-sudoku) |
+## Two Pointers
+|  |
+| ------- |
+| [0042-trapping-rain-water](https://github.com/P-arth-05/leetcode/tree/master/0042-trapping-rain-water) |
+## Monotonic Stack
+|  |
+| ------- |
+| [0042-trapping-rain-water](https://github.com/P-arth-05/leetcode/tree/master/0042-trapping-rain-water) |
 <!---LeetCode Topics End-->
