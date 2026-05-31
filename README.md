@@ -7,12 +7,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0009-palindrome-number](https://github.com/P-arth-05/leetcode/tree/master/0009-palindrome-number) |
+| [0066-plus-one](https://github.com/P-arth-05/leetcode/tree/master/0066-plus-one) |
 ## Array
 |  |
 | ------- |
 | [0036-valid-sudoku](https://github.com/P-arth-05/leetcode/tree/master/0036-valid-sudoku) |
 | [0041-first-missing-positive](https://github.com/P-arth-05/leetcode/tree/master/0041-first-missing-positive) |
 | [0042-trapping-rain-water](https://github.com/P-arth-05/leetcode/tree/master/0042-trapping-rain-water) |
+| [0066-plus-one](https://github.com/P-arth-05/leetcode/tree/master/0066-plus-one) |
 | [0518-coin-change-ii](https://github.com/P-arth-05/leetcode/tree/master/0518-coin-change-ii) |
 ## Dynamic Programming
 |  |
