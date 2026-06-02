@@ -1,12 +1,17 @@
 class Solution:
-    def earliestFinishTime(self, landStartTime: list[int], landDuration: list[int], 
-                           waterStartTime: list[int], waterDuration: list[int]) -> int:
-        
-        def calculate_min_finish(start1, dur1, start2, dur2):
-            min_end_first = min(s + d for s, d in zip(start1, dur1))
-            return min(max(min_end_first, s) + d for s, d in zip(start2, dur2))
-        # Scenario A: Land first, Water second
-        land_first = calculate_min_finish(landStartTime, landDuration, waterStartTime, waterDuration)
-        # Scenario B: Water first, Land second
-        water_first = calculate_min_finish(waterStartTime, waterDuration, landStartTime, landDuration)
-        return min(land_first, water_first)
+    def earliestFinishTime(self, landStartTime: List[int], landDuration: List[int], waterStartTime: List[int], waterDuration: List[int]) -> int:
+        n = len(landStartTime)
+        m = len(waterStartTime)
+
+        minWaterEnd = min(waterStartTime[i] + waterDuration[i] for i in range(m))
+        minLandEnd = min(landStartTime[i] + landDuration[i] for i in range(n))
+
+        min_land_time = float("inf")
+        for j in range(m):
+            min_land_time = min(min_land_time, max(waterStartTime[j], minLandEnd) + waterDuration[j])
+                
+        min_water_time = float("inf")
+        for j in range(n):
+            min_water_time = min(min_water_time, max(landStartTime[j], minWaterEnd) + landDuration[j])
+
+        return min(min_land_time, min_water_time)
