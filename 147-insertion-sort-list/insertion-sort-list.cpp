@@ -1,31 +1,33 @@
 /**
  * Definition for singly-linked list.
  * struct ListNode {
- * int val;
- * ListNode *next;
- * ListNode() : val(0), next(nullptr) {}
- * ListNode(int x) : val(x), next(nullptr) {}
- * ListNode(int x, ListNode *next) : val(x), next(next) {}
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
 class Solution {
 public:
     ListNode* insertionSortList(ListNode* head) {
-        if (head == NULL || head->next == NULL) return head;
-        ListNode* dummy = new ListNode(0);
-        ListNode* curr = head; 
-        while (curr != NULL) {
-            ListNode* prev = dummy;
-            while (prev->next != NULL && prev->next->val < curr->val) {
-                prev = prev->next;
-            }
-            ListNode* nextNode = curr->next;
-            curr->next = prev->next;
-            prev->next = curr;
-            curr = nextNode;
-        }
-        ListNode* sortedHead = dummy->next;
-        delete dummy; 
-        return sortedHead;
+        vector<int> vals;
+
+    ListNode* cur = head;
+    while (cur) {
+        vals.push_back(cur->val);
+        cur = cur->next;
+    }
+
+    sort(vals.begin(), vals.end());
+
+    cur = head;
+    int i = 0;
+    while (cur) {
+        cur->val = vals[i++];
+        cur = cur->next;
+    }
+
+    return head;
     }
 };
