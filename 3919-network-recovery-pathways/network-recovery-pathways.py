@@ -1,68 +1,70 @@
 from typing import List
-import heapq
+from collections import deque
 
 class Solution:
     def findMaxPathScore(self, edges: List[List[int]], online: List[bool], k: int) -> int:
         n = len(online)
 
         graph = [[] for _ in range(n)]
-
-        lo = float("inf")
-        hi = 0
+        indegree = [0] * n
+        costs = set()
 
         for u, v, w in edges:
-            # Skip edges incident to offline intermediate nodes
-            if (u != 0 and u != n - 1 and not online[u]) or \
-               (v != 0 and v != n - 1 and not online[v]):
-                continue
-
             graph[u].append((v, w))
-            lo = min(lo, w)
-            hi = max(hi, w)
+            indegree[v] += 1
+            costs.add(w)
 
-        if lo == float("inf"):
-            return -1
+        # Topological sort (DAG)
+        topo = []
+        q = deque([i for i in range(n) if indegree[i] == 0])
 
-        def check(limit):
-            INF = 10 ** 30
+        while q:
+            u = q.popleft()
+            topo.append(u)
+
+            for v, w in graph[u]:
+                indegree[v] -= 1
+                if indegree[v] == 0:
+                    q.append(v)
+
+        costs = sorted(costs)
+
+        def can(min_edge):
+            INF = float('inf')
             dist = [INF] * n
             dist[0] = 0
 
-            pq = [(0, 0)]
-
-            while pq:
-                d, u = heapq.heappop(pq)
-
-                if d != dist[u]:
+            for u in topo:
+                if dist[u] == INF:
                     continue
 
-                if d > k:
+                # intermediate offline nodes not allowed
+                if u != 0 and u != n - 1 and not online[u]:
                     continue
 
                 for v, w in graph[u]:
-                    if w < limit:
+                    if w < min_edge:
                         continue
 
-                    nd = d + w
+                    if v != n - 1 and v != 0 and not online[v]:
+                        continue
 
-                    if nd < dist[v]:
-                        dist[v] = nd
-                        heapq.heappush(pq, (nd, v))
+                    if dist[u] + w < dist[v]:
+                        dist[v] = dist[u] + w
 
             return dist[n - 1] <= k
 
-        if not check(lo):
-            return -1
+        left, right = 0, len(costs) - 1
+        ans = -1
 
-        ans = lo
+        while left <= right:
+            mid = (left + right) // 2
+            val = costs[mid]
 
-        while lo <= hi:
-            mid = (lo + hi) // 2
-
-            if check(mid):
-                ans = mid
-                lo = mid + 1
+            if can(val):
+                ans = val
+                left = mid + 1
             else:
-                hi = mid - 1
+                right = mid - 1
 
         return ans
